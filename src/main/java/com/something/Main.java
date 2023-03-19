@@ -1,5 +1,6 @@
 package com.something;
 
+import com.something.utils.APIUtils;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
@@ -11,5 +12,9 @@ public class Main {
         System.out.println(response.headers());
         System.out.println(response.jsonPath().getString("name"));
         System.out.println(response.jsonPath().getString("author"));
+
+//        String token = APIUtils.generateToken();
+//        System.out.println(token);
+
     }
 }

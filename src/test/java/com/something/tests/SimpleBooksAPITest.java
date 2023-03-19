@@ -61,6 +61,7 @@ public class SimpleBooksAPITest {
                 .thenReturn();
         Books[] books= response.as(Books[].class);
         assertEquals(6, books.length);
+        assertEquals("The Russian", books[0].getName());
     }
 
     //to avoid looking at postman for the resources
