@@ -14,6 +14,7 @@ import java.util.Optional;
 
 import static com.something.constants.Constants.BASE_URL;
 import static com.something.constants.Constants.BOOKS;
+import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
 import static org.junit.Assert.assertEquals;
 
@@ -60,5 +61,13 @@ public class SimpleBooksAPITest {
                 .thenReturn();
         Books[] books= response.as(Books[].class);
         assertEquals(6, books.length);
+    }
+
+    //to avoid looking at postman for the resources
+    @Test
+    public void testPretty(){
+        String response = given()
+                .get(BASE_URL+BOOKS)
+                .prettyPrint();
     }
 }
