@@ -71,4 +71,15 @@ public class SimpleBooksAPITest {
                 .get(BASE_URL+BOOKS)
                 .prettyPrint();
     }
+
+    @Test
+    public void testLogAll(){
+        Response response = given()
+                .when()
+                .get(BASE_URL + BOOKS)
+                .then()
+                .log().all()
+                .statusCode(200)
+                .extract().response();
+    }
 }
