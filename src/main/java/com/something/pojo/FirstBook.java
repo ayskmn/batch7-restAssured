@@ -1,23 +1,17 @@
 package com.something.pojo;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Books {
 
-    @JsonProperty("status")
-    private Integer status;
+public class FirstBook {
 
     @JsonProperty("id")
     private Integer id;
@@ -25,10 +19,21 @@ public class Books {
     @JsonProperty("name")
     private String name;
 
+    @JsonProperty("author")
+    private String author;
+
+    @JsonProperty("isbn")
+    private String isbn;
+
     @JsonProperty("type")
     private String type;
 
+    @JsonProperty("price")
+    private Double price;
+
+    @JsonProperty("current-stock")
+    private Integer currentStock;
+
     @JsonProperty("available")
     private Boolean available;
-
 }
